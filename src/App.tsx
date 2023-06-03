@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Navbar from "./Components/navbar/Navbar";
+import Footer from "./Components/footer/Footer";
+import Home from "./Pages/Home/Home";
+import Cart from "./Pages/Cart/Cart";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { NavbarItem } from "./model/navbarItem";
 function App() {
+  const navbaItems: NavbarItem[] = [
+    { label: "Home", route: "/" },
+    { label: "Cart", route: "/cart" },
+    { label: "Contact Us", route: "" },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar items={navbaItems} />
+        <div className="container">
+          <Routes>
+            <Route path="/" Component={Home} />
+            <Route path="/cart" Component={Cart} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
     </div>
   );
 }
