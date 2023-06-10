@@ -1,6 +1,10 @@
 .navbar {
   background: #eee;
 }
+.nav-logo {
+  width: 60px;
+  border-radius: 50%;
+}
 .nav-item {
   cursor: pointer;
   text-decoration: none;

@@ -1,0 +1,33 @@
+.product {
+  border-radius: 15px;
+  border: 1px solid #f6f6f6;
+  padding: 20px 15px;
+  background: #f6f6f6;
+  margin: 10px 0;
+  text-align: center;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.card-name {
+  color: blue;
+}
+.product .card-img {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  height: 150px;
+  object-fit: cover;
+}
+.primary-btn {
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 8px 30px;
+  background: #4b72fd;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 10px;
+  left: 29%;
+}

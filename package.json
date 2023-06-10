@@ -10,6 +10,7 @@
     "@types/node": "^16.18.34",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
+    "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
