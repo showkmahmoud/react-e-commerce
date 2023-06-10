@@ -27,7 +27,10 @@ const Home = () => {
         {/* products */}
         <div className="row justify-content-between align-items-stretch">
           {products.map((item: IProduct) => (
-            <div className="product-card" key={item.id}>
+            <div
+              className="product-card  col-sm-12 col-md-6 col-lg-4"
+              key={item.id}
+            >
               <ProductCard data={item} />
             </div>
           ))}
