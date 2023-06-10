@@ -1,16 +1,25 @@
 import "./ProductCard.css";
 import { IProduct } from "../../model/product";
+import Button from "../Button/Button";
 
 function ProductCard(props: any) {
   const { title, body, id, userId, img, price }: IProduct = props.data;
+  const onAddToCart = (id: number) => {
+    console.log(id);
+  };
   return (
     <>
       <div className="product">
-        <img src={img} className="card-img" alt="" />
+        <div className="card-img-wrapper">
+          <img src={img} className="card-img" alt="" />
+        </div>
         <p className="card-name">{title}</p>
         <p className="card-details">{body}</p>
         <p>{price}$</p>
-        <button className="primary-btn">Add To Cart</button>
+        <Button
+          btnClass={"btn btn-primary"}
+          onClickBtn={() => onAddToCart(id)}
+        />
       </div>
     </>
   );

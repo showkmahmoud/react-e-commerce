@@ -1,0 +1,11 @@
+.primary-btn {
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 8px 30px;
+  background: #4b72fd;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  bottom: 10px;
+  left: 29%;
+}
