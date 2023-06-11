@@ -5,5 +5,5 @@ export interface IProduct {
   body: string;
   img: string;
   price: number;
-  quantity?: number;
+  quantity?: number | any;
 }
