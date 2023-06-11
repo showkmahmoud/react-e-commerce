@@ -5,6 +5,7 @@ import Cart from "./Pages/Cart/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { NavbarItem } from "./model/navbarItem";
+import CounterContextProvider from "./shared/shared context/counterContext";
 function App() {
   const navbaItems: NavbarItem[] = [
     { label: "Home", route: "/" },
@@ -13,16 +14,18 @@ function App() {
   ];
   return (
     <div className="App">
-      <Router>
-        <Navbar items={navbaItems} />
-        <div className="container">
-          <Routes>
-            <Route path="/" Component={Home} />
-            <Route path="/cart" Component={Cart} />
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
+      <CounterContextProvider>
+        <Router>
+          <Navbar items={navbaItems} />
+          <div className="container routes-container ">
+            <Routes>
+              <Route path="/" Component={Home} />
+              <Route path="/cart" Component={Cart} />
+            </Routes>
+          </div>
+          <Footer />
+        </Router>
+      </CounterContextProvider>
     </div>
   );
 }
