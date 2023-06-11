@@ -27,9 +27,8 @@ const Navbar = ({ items }: Props) => {
         {/* cart */}
         <div className="cart d-flex align-items-start ">
           <Link className="nav-item" to="/cart">
-            <p className="mx-4">Cart</p>
-          </Link>
           <ShoppingCart size={32} />
+          </Link>
           <span className="text-primary"> {store.cart.cartCounter}</span>
         </div>
       </div>

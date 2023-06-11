@@ -9,7 +9,12 @@
   position: relative;
 }
 .card-name {
-  color: blue;
+  color: #3d3db0;
+  font-weight: bold;
+  font-size: 20px;
+}
+.quantity-value{
+  color: #3d3db0;
 }
 .product .card-img-wrapper {
   overflow: hidden;
@@ -27,4 +32,42 @@
 }
 .product .card-img-wrapper .card-img:hover {
   transform: scale(1.5);
+}
+.quantity-box{
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid #fff;
+  padding: 12px 20px;
+  border-radius: 40px;
+  transition: .5s ease-out;
+  background: #fff;
+}
+.quantity-box:hover{
+  box-shadow: 10px 10px 20px -1px rgba(201,199,201,1);
+}
+
+.decrease-btn,
+.increase-btn{
+  border: 2px solid #0d6efd;
+  border-radius: 50%;
+  background: #fff;
+  color: #0d6efd;
+  width: 34px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 14px 0;
+  transition: .5s ease-out;
+  cursor: pointer;
+}
+.decrease-btn:hover,
+.increase-btn:hover{
+  background:#0d6efd ;
+  color: #fff;
+}
+.decrease-btn p,
+.increase-btn p {
+  font-weight: bolder;
+  font-size: 22px;
 }

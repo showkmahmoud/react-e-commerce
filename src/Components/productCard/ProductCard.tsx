@@ -1,11 +1,12 @@
 import "./ProductCard.css";
 import { IProduct } from "../../model/product";
 import Button from "../Button/Button";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Store } from "../../shared/shared context/counterContext";
 
 function ProductCard(props: any) {
-  const { title, body, id, userId, img, price }: IProduct = props.data;
+  const { title, body, id, userId, img, price, quantity }: IProduct =
+    props.data;
   // to use the shared store
   const store = useContext(Store);
   const onAddToCart = (product: IProduct) => {
@@ -34,6 +35,10 @@ function ProductCard(props: any) {
       });
     }
   };
+  useEffect(() => {
+    console.log(store.cart.cartItems);
+  }, [store.cart.cartItems]);
+
   return (
     <>
       <div className="product">
@@ -41,12 +46,31 @@ function ProductCard(props: any) {
           <img src={img} className="card-img" alt="" />
         </div>
         <p className="card-name">{title}</p>
-        <p className="card-details">{body}</p>
-        <p>{price}$</p>
-        <Button
-          btnClass={"btn btn-primary"}
-          onClickBtn={() => onAddToCart(props.data)}
-        />
+        <p className="card-details text-secondary">{body}</p>
+        <div className="d-flex justify-content-between mb-3 px-1">
+          <p className="text-secondary fw-bold">Price: </p>
+          <p className="text-secondary fw-bold">{price}$</p>
+        </div>
+        {/* if the quantity exist or not */}
+        {quantity ? (
+          <div className=" quantity-box d-flex justify-content-between align-items-center">
+            {/* decrease Q btn */}
+            <div className="decrease-btn">
+              <p>-</p>
+            </div>
+            {/* quantity value */}
+            <p className="m-0 quantity-value fs-5 fw-bold">{quantity}</p>
+            {/* increase Q btn */}
+            <div className="increase-btn">
+              <p>+</p>
+            </div>
+          </div>
+        ) : (
+          <Button
+            btnClass={"btn btn-primary w-75 mt-3"}
+            onClickBtn={() => onAddToCart(props.data)}
+          />
+        )}
       </div>
     </>
   );
